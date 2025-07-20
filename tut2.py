@@ -28,7 +28,7 @@ y=dataset["ctc"]
 
 x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.20,random_state=42)
 
-# Linear Regression
+# Simple Linear Regression
 
 from sklearn.linear_model import LinearRegression
 
@@ -37,11 +37,11 @@ lr=LinearRegression()
 lr.fit(x_train,y_train)
 
 
-# Y = m*X + C
+# Y = m*X + C (Simple Linear Regression Equation)
 
-print(lr.coef_)  # Value of m
+print(lr.coef_)  # Value of m (slope)
 print()
-print(lr.intercept_) # Value of C
+print(lr.intercept_) # Value of C (intercept)
 
 # Y = 1.66494312*x + 1.684276973457429
 
