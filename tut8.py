@@ -1,14 +1,14 @@
-# Logistic Regression (practical) (Binary Classification) (Multiple input)
+# Logistic Regression (practical) (Binary Classification) (Polynomial input)
 
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-dataset=pd.read_csv("C:\\Users\\ojhas\\Dropbox\\PC\\Downloads\\placement.csv")
+dataset=pd.read_csv("C:\\Users\\ojhas\\Dropbox\\PC\\Downloads\\mix.csv")
 # print(dataset)
 
 x=dataset.iloc[:,:-1]
-y=dataset["placed"]
+y=dataset["output"]
 
 from sklearn.model_selection import train_test_split
 
@@ -22,15 +22,10 @@ lr.fit(x_train,y_train)
 
 print(lr.score(x_test,y_test)*100)
 
-print()
-
-print(lr.predict([[8.5,5.09]]))
-
 from mlxtend.plotting import plot_decision_regions
 
 plot_decision_regions(x.to_numpy(),y.to_numpy(),clf=lr)
 plt.show()
 
-
-sns.scatterplot(x="cgpa",y="score",data=dataset,hue="placed")
-plt.show()
+# sns.scatterplot(x="data1",y="data2",data=dataset,hue="output")
+# plt.show()
